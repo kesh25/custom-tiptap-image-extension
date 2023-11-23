@@ -41,7 +41,7 @@
     },
     "scripts": {
       "clean": "rm -rf dist",
-      "build": "rollup -c",
+      "build": "tsc --output-dir dist rollup -c",
       "postinstall": "npm run build"
     }
   }
