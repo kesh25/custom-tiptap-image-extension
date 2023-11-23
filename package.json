@@ -1,7 +1,7 @@
 {
     "name": "@tiptap/custom-extension-image",
     "description": "image extension for tiptap",
-    "version": "2.1.13",
+    "version": "2.1.14",
     "homepage": "https://tiptap.dev",
     "keywords": [
       "tiptap",
@@ -41,7 +41,7 @@
     },
     "scripts": {
       "clean": "rm -rf dist",
-      "build": "npm run clean && rollup -c",
+      "build": "rollup -c",
       "postinstall": "npm run build"
     }
   }
