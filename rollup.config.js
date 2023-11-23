@@ -6,30 +6,37 @@ import autoExternal from 'rollup-plugin-auto-external'
 import sourcemaps from 'rollup-plugin-sourcemaps'
 import typescript from 'rollup-plugin-typescript2'
 
-import pkg from './package.json'
+import * as pkg from './package.json' assert {type: "json"}
 
 export default {
   external: [/@tiptap\/pm\/.*/],
   input: 'src/index.ts',
   output: [
+    
     {
-      name: pkg.name,
+      name: "index",
       file: pkg.umd,
       format: 'umd',
-      sourcemap: true,
+      sourcemap: "inline",
+      exports: 'named',
+      globals: {
+        '@tiptap/core': 'core', // Add this line
+      },
     },
     {
-      name: pkg.name,
+      name: "index",
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true,
-      exports: 'auto',
+      sourcemap: "inline",
+      exports: 'named',
     },
     {
-      name: pkg.name,
+      name: "index",
       file: pkg.module,
       format: 'es',
-      sourcemap: true,
+      sourcemap: "inline",
+      exports: 'named',
+
     },
   ],
   plugins: [
@@ -41,11 +48,11 @@ export default {
     commonjs(),
     babel({
       babelHelpers: 'bundled',
-      exclude: '../../node_modules/**',
+      exclude: './node_modules/**',
     }),
     sizes(),
     typescript({
-      tsconfig: '../../tsconfig.json',
+      tsconfig: './tsconfig.json',
       tsconfigOverride: {
         compilerOptions: {
           declaration: true,

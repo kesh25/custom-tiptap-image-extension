@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        // other options...
+    },
+    // other configurations...
+}
