@@ -1,0 +1,1 @@
+## Custom image extension for titptap adopted from tiptap-image 
