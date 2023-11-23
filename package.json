@@ -1,7 +1,7 @@
 {
     "name": "@tiptap/custom-extension-image",
     "description": "image extension for tiptap",
-    "version": "2.1.12",
+    "version": "2.1.13",
     "homepage": "https://tiptap.dev",
     "keywords": [
       "tiptap",
